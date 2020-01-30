@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.Collections;
+
+
 
 public class Exercises {
 
@@ -10,9 +13,14 @@ public class Exercises {
 	}
 
 	public ArrayList<String> endsMeet(ArrayList<String> values, int n) {
-		// write your code here
+		ArrayList<String> endsMet = new ArrayList<String>();
+		if (values == null || values.size() < n || n != (int) n || n <= 0) {
+			return endsMet;
+		}
 
-		return null;	// default return value to ensure compilation
+		endsMet.addAll(values.subList(0, n));
+		endsMet.addAll(values.subList(values.size() - n, values.size()));
+		return endsMet;
 	}
 
 	public int difference(ArrayList<Integer> numbers) {
