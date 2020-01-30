@@ -17,16 +17,30 @@ public class Exercises {
 		if (values == null || values.size() < n || n != (int) n || n <= 0) {
 			return endsMet;
 		}
-
 		endsMet.addAll(values.subList(0, n));
 		endsMet.addAll(values.subList(values.size() - n, values.size()));
 		return endsMet;
 	}
 
 	public int difference(ArrayList<Integer> numbers) {
-		// write your code here
+		if (numbers == null || numbers.size() < 1) {
+			return -1;
+		}
+		int min = numbers.get(0);
 
-		return -1;		// default return value to ensure compilation
+	    for (int number : numbers) {
+	        if (number < min) {
+	            min = number;
+	        }
+	    }
+		int max = numbers.get(0);
+
+		for (int number : numbers) {
+		    if (number > max) {
+		        max = number;
+		    }
+		}
+		return max - min;
 	}
 
 	public double biggest(ArrayList<Double> numbers) {
