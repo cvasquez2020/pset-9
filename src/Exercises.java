@@ -99,13 +99,20 @@ public class Exercises {
 		        return false;
 		    }
 		}
-		return true;	// default return value to ensure compilation
+		return true;
 	}
 
 	public boolean consecutive(ArrayList<Integer> numbers) {
-		// write your code here
-
-		return false;	// default return value to ensure compilation
+		if (numbers == null || numbers.size() < 1) {
+			return false;
+		}
+		for (int i = 0; i < numbers.size() - 2; i++) {
+			int sum = numbers.get(i) % 2 + numbers.get(i + 1) % 2 + numbers.get(i + 2) % 2;
+			if (sum == 0 || sum == 3) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public boolean balance(ArrayList<Integer> numbers) {
