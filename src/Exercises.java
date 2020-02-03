@@ -53,7 +53,6 @@ public class Exercises {
 				return -1.0;
 			}
 		}
-
 		ArrayList<Double> biggest = new ArrayList<Double>(Arrays.asList(numbers.get(0), numbers.get(numbers.size() / 2), numbers.get(numbers.size() - 1)));
 
 		for (double number : biggest) {
@@ -66,13 +65,21 @@ public class Exercises {
 	}
 
 	public ArrayList<String> middle(ArrayList<String> values) {
-		// write your code here
-
-		return null;	// default return value to ensure compilation
+		ArrayList<String> middle = new ArrayList<String>();
+		if (values == null || values.size() < 3 || values.size() % 2 == 0) {
+			return middle;
+		}
+		for (String word : values) {
+			if (word.isEmpty()) {
+				return middle;
+			}
+		}
+		 middle = new ArrayList<String>(Arrays.asList(values.get(values.size() / 2 - 1), values.get(values.size() / 2), values.get(values.size() / 2 + 1)));
+		return middle;
 	}
 
 	public boolean increasing(ArrayList<Integer> numbers) {
-		// write your code here
+
 
 		return false;	// default return value to ensure compilation
 	}
