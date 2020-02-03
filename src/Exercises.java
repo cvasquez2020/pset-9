@@ -137,8 +137,24 @@ public class Exercises {
 	}
 
 	public int clumps(ArrayList<String> values) {
-		// write your code here
+		int clumps = 0;
 
-		return -1;		// default return value to ensure compilation
+		if (values == null) {
+			return -1;
+		}
+		for (String word : values) {
+			if (word.isEmpty()) {
+				return -1;
+			}
+		}
+		for (int i = 0; i < values.size() - 1; i++) {
+			if (values.get(i).equals(values.get(i + 1)) && i == 0) {
+				clumps++;
+
+			} else if (values.get(i).equals(values.get(i + 1)) && !(values.get(i).equals(values.get(i - 1)))) {
+						clumps++;
+			}
+		}
+		return clumps;
 	}
 }
