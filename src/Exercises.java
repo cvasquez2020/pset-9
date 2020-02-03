@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
-
-
+import java.util.List;
+import java.util.Arrays;
 
 public class Exercises {
 
@@ -44,9 +44,25 @@ public class Exercises {
 	}
 
 	public double biggest(ArrayList<Double> numbers) {
-		// write your code here
+		double max = 0;
+		if (numbers == null || numbers.size() < 3 || numbers.size() % 2 == 0) {
+			return -1.0;
+		}
+		for (int i = 0; i < numbers.size(); i++) {
+			if (numbers.get(i) == 0.0 || numbers.get(i) < 0) {
+				return -1.0;
+			}
+		}
 
-		return -1;		// default return value to ensure compilation
+		ArrayList<Double> biggest = new ArrayList<Double>(Arrays.asList(numbers.get(0), numbers.get(numbers.size() / 2), numbers.get(numbers.size() - 1)));
+
+		for (double number : biggest) {
+		    if (number > max) {
+		        max = number;
+		    }
+		}
+
+		return max;
 	}
 
 	public ArrayList<String> middle(ArrayList<String> values) {
