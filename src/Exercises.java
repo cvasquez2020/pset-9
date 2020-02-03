@@ -79,9 +79,15 @@ public class Exercises {
 	}
 
 	public boolean increasing(ArrayList<Integer> numbers) {
-
-
-		return false;	// default return value to ensure compilation
+		if (numbers == null || numbers.size() < 3) {
+			return false;
+		}
+		for (int i = 0; i < numbers.size() - 2; i++) {
+			if (numbers.get(i) < numbers.get(i + 1) && numbers.get(i + 1) < numbers.get(i + 2)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public boolean everywhere(ArrayList<Integer> numbers, int x) {
