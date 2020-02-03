@@ -9,7 +9,7 @@ public class Exercises {
 		if (a == null || a.isEmpty() || b == null || b.isEmpty()) {
 			return false;
 		}
-		return a.get(0) == b.get(0) || a.get(a.size() - 1) == b.get(b.size() - 1);	// default return value to ensure compilation
+		return a.get(0) == b.get(0) || a.get(a.size() - 1) == b.get(b.size() - 1);
 	}
 
 	public ArrayList<String> endsMeet(ArrayList<String> values, int n) {
@@ -138,7 +138,6 @@ public class Exercises {
 
 	public int clumps(ArrayList<String> values) {
 		int clumps = 0;
-
 		if (values == null) {
 			return -1;
 		}
