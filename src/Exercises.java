@@ -85,7 +85,7 @@ public class Exercises {
 				return middle;
 			}
 		}
-		
+
 		 middle = new ArrayList<String>(Arrays.asList(values.get(values.size() / 2 - 1), values.get(values.size() / 2), values.get(values.size() / 2 + 1)));
 		return middle;
 	}
@@ -94,11 +94,13 @@ public class Exercises {
 		if (numbers == null || numbers.size() < 3) {
 			return false;
 		}
+
 		for (int i = 0; i < numbers.size() - 2; i++) {
 			if (numbers.get(i) < numbers.get(i + 1) && numbers.get(i + 1) < numbers.get(i + 2)) {
 				return true;
 			}
 		}
+
 		return false;
 	}
 
@@ -106,11 +108,13 @@ public class Exercises {
 		if (numbers == null || numbers.size() < 1) {
 			return false;
 		}
+
 		for (int i = 1; i < numbers.size() - 1; i++) {
 		    if (numbers.get(i - 1) != x && numbers.get(i + 1) != x && numbers.get(i) != x) {
 		        return false;
 		    }
 		}
+
 		return true;
 	}
 
@@ -118,12 +122,15 @@ public class Exercises {
 		if (numbers == null || numbers.size() < 1) {
 			return false;
 		}
+
 		for (int i = 0; i < numbers.size() - 2; i++) {
 			int sum = numbers.get(i) % 2 + numbers.get(i + 1) % 2 + numbers.get(i + 2) % 2;
+
 			if (sum == 0 || sum == 3) {
 				return true;
 			}
 		}
+
 		return false;
 	}
 
@@ -131,6 +138,7 @@ public class Exercises {
 		if (numbers == null || numbers.size() < 2) {
 			return false;
 		}
+
 		for (int i = 0; i < numbers.size(); i++) {
 			int left = 0;
 			int right = 0;
@@ -138,9 +146,11 @@ public class Exercises {
 			for (int u = 0; u < i; u++) {
 				left += numbers.get(u);
 			}
+
 			for (int u = i; u < numbers.size(); u++) {
 				right += numbers.get(u);
 			}
+
 			if (left == right) {
 				return true;
 			}
@@ -150,22 +160,25 @@ public class Exercises {
 
 	public int clumps(ArrayList<String> values) {
 		int clumps = 0;
+
 		if (values == null) {
 			return -1;
 		}
+
 		for (String word : values) {
 			if (word.isEmpty()) {
 				return -1;
 			}
 		}
+
 		for (int i = 0; i < values.size() - 1; i++) {
 			if (values.get(i).equals(values.get(i + 1)) && i == 0) {
 				clumps++;
-
 			} else if (values.get(i).equals(values.get(i + 1)) && !(values.get(i).equals(values.get(i - 1)))) {
 						clumps++;
 			}
 		}
+		
 		return clumps;
 	}
 }
