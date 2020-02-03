@@ -91,9 +91,15 @@ public class Exercises {
 	}
 
 	public boolean everywhere(ArrayList<Integer> numbers, int x) {
-		// write your code here
-
-		return false;	// default return value to ensure compilation
+		if (numbers == null || numbers.size() < 1) {
+			return false;
+		}
+		for (int i = 1; i < numbers.size() - 1; i++) {
+		    if (numbers.get(i - 1) != x && numbers.get(i + 1) != x && numbers.get(i) != x) {
+		        return false;
+		    }
+		}
+		return true;	// default return value to ensure compilation
 	}
 
 	public boolean consecutive(ArrayList<Integer> numbers) {
