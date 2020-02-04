@@ -175,10 +175,10 @@ public class Exercises {
 			if (values.get(i).equals(values.get(i + 1)) && i == 0) {
 				clumps++;
 			} else if (values.get(i).equals(values.get(i + 1)) && !(values.get(i).equals(values.get(i - 1)))) {
-						clumps++;
+				clumps++;
 			}
 		}
-		
+
 		return clumps;
 	}
 }
