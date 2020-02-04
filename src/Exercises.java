@@ -1,7 +1,7 @@
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Arrays;
+import java.util.List;
+
 
 public class Exercises {
 
@@ -31,14 +31,13 @@ public class Exercises {
 		}
 
 		int min = numbers.get(0);
+		int max = numbers.get(0);
 
 	    for (int number : numbers) {
 	        if (number < min) {
 	            min = number;
 	        }
 	    }
-
-		int max = numbers.get(0);
 
 		for (int number : numbers) {
 		    if (number > max) {
@@ -155,6 +154,7 @@ public class Exercises {
 				return true;
 			}
 		}
+
 		return false;
 	}
 
